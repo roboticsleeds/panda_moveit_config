@@ -1,0 +1,8 @@
+<launch>
+    <arg name="slow_velocity_limits" default="true" />
+
+    <include file="$(find panda_moveit_config)/launch/moveit.launch">
+        <arg name="use_rviz" value="true"/>
+        <arg name="slow_velocity_limits" value="$(arg slow_velocity_limits)" />
+    </include>
+</launch>

@@ -1,4 +1,6 @@
 <launch>
+  <!-- Leeds-specific arguments -->
+  <arg name="slow_velocity_limits" default="true" /> 
 
   <!-- GDB Debug Option -->
   <arg name="debug" default="false" />
@@ -49,6 +51,7 @@
     <arg name="load_robot_description" value="$(arg load_robot_description)" />
     <arg name="load_gripper" value="$(arg load_gripper)" />
     <arg name="arm_id" value="$(arg arm_id)" />
+    <arg name="slow_velocity_limits" value="$(arg slow_velocity_limits)" />
   </include>
 
   <!-- Planning Pipelines -->
