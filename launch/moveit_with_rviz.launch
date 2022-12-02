@@ -1,6 +1,7 @@
 <launch>
+    <!-- This is a custom (Leeds) functionality for safety; NEVER change this to False directly here, instead pass "slow_velocity_limits:=false" at the command line for relaxed limits. -->
     <arg name="slow_velocity_limits" default="true" />
-
+  
     <include file="$(find panda_moveit_config)/launch/moveit.launch">
         <arg name="use_rviz" value="true"/>
         <arg name="slow_velocity_limits" value="$(arg slow_velocity_limits)" />
