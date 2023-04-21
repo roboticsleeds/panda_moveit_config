@@ -18,6 +18,9 @@
   <!-- By default we will load the gripper -->
   <arg name="load_gripper" default="true" />
 
+  <!-- By default we will not load the pump -->
+  <arg name="load_pump" default="false" />
+
   <!-- By default, we will not load or override the robot_description -->
   <arg name="load_robot_description" default="false"/>
 
