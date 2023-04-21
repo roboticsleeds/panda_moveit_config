@@ -2,6 +2,10 @@
   <!-- Define the MoveIt controller manager plugin to use for trajectory execution -->
   <param name="moveit_controller_manager" value="moveit_simple_controller_manager/MoveItSimpleControllerManager" />
 
+  <arg name="using_gripper" default="true" />
+
   <!-- Load controller list to the parameter server -->
-  <rosparam subst_value="true" file="$(find panda_moveit_config)/config/simple_moveit_controllers.yaml" />
+  <rosparam if="$(arg using_gripper)" subst_value="true" file="$(find panda_moveit_config)/config/simple_moveit_controllers.yaml" />
+  <!-- Using a different controller list (without gripper controllers) if not using gripper.  -->
+  <rosparam unless="$(arg using_gripper)" subst_value="true" file="$(find panda_moveit_config)/config/simple_moveit_controllers_without_gripper.yaml" />
 </launch>
