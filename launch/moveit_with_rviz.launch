@@ -1,9 +1,17 @@
 <launch>
     <!-- This is a custom (Leeds) functionality for safety; NEVER change this to False directly here, instead pass "slow_velocity_limits:=false" at the command line for relaxed limits. -->
     <arg name="slow_velocity_limits" default="true" />
-  
+
+    <!-- By default we will load the gripper -->
+    <arg name="load_gripper" default="true" />
+
+    <!-- By default we will not load the pump -->
+    <arg name="load_pump" default="false" />
+ 
     <include file="$(find panda_moveit_config)/launch/moveit.launch">
         <arg name="use_rviz" value="true"/>
         <arg name="slow_velocity_limits" value="$(arg slow_velocity_limits)" />
+        <arg name="load_gripper" value="$(arg load_gripper)" />
+        <arg name="load_pump" value="$(arg load_pump)" />
     </include>
 </launch>
