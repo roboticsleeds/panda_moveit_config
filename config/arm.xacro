@@ -61,6 +61,11 @@
         <xacro:enable_collisions_for link="${link_fmt.format(link)}" others="${[link_fmt.format(i) for i in enabled]}" />
     </xacro:macro>
 
+    <xacro:macro name="disable_collisions_for_specific_links" params="link1 link2">
+        <disable_collisions link1="${link1}" link2="${link2}" reason="Never" />
+    </xacro:macro>
+    <xacro:disable_collisions_for_specific_links link1="panda_pump" link2="panda_link7" />
+
     <!-- Configure ACM -->
     <xacro:configure_collisions link="0" enabled="${[5,6,7]}" />
     <xacro:configure_collisions link="1" enabled="${[5,6,7]}" />
