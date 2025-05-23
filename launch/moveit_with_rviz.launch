@@ -3,7 +3,7 @@
     <arg name="slow_velocity_limits" default="true" />
 
     <!-- By default we will load the gripper -->
-    <arg name="load_gripper" default="true" />
+    <arg name="load_gripper" default="false" />
 
     <!-- By default we will not load the pump -->
     <arg name="load_pump" default="false" />
